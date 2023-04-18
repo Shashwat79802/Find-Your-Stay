@@ -1,0 +1,594 @@
+.copyright-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-beige-100);
+  width: 1280px;
+  height: 38px;
+}
+.copyrightinc3 {
+  position: absolute;
+  top: 7px;
+  left: 38%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 374px;
+  height: 23px;
+}
+.copyright3,
+.footer-child2 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+.copyright3 {
+  top: 451px;
+  height: 38px;
+  text-align: center;
+}
+.footer-child2 {
+  top: 0;
+  background-color: var(--color-darkslategray-100);
+  height: 451px;
+}
+.footer-child3 {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  width: 2.5px;
+  height: 399px;
+}
+.f6 {
+  font-size: var(--font-size-31xl);
+}
+.our6 {
+  font-size: var(--font-size-21xl);
+}
+.stay6 {
+  color: var(--color-orange);
+}
+.findyourstay6 {
+  position: absolute;
+  top: 5.64px;
+  left: 66.55px;
+  display: flex;
+  align-items: flex-end;
+  width: 378.99px;
+  height: 64.36px;
+}
+.freepik-house-inject-104-icon6 {
+  position: absolute;
+  height: 86.46%;
+  width: 15.07%;
+  top: 0;
+  right: 85.04%;
+  bottom: 13.54%;
+  left: -0.11%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.logo6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 445.53px;
+  height: 70px;
+}
+.features5,
+.home6 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 81px;
+  height: 33px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.features5 {
+  width: 127px;
+  opacity: 0.56;
+}
+.frame-div {
+  position: absolute;
+  top: 98px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+  font-size: var(--font-size-7xl);
+  font-family: var(--font-brawler);
+}
+.sitemap3 {
+  position: absolute;
+  top: 40px;
+  left: 60%;
+  width: 445.53px;
+  height: 221px;
+  font-size: var(--font-size-21xl);
+  color: var(--color-beige-100);
+  font-family: var(--font-berlin-sans-fb);
+}
+.textbox-child1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-mini);
+  background-color: var(--color-beige-100);
+  width: 488px;
+  height: 117px;
+}
+.write-down-your3 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: inline-block;
+  width: 426px;
+  height: 46px;
+}
+.name-child1,
+.textbox3 {
+  position: absolute;
+  top: 100px;
+  left: 33px;
+  width: 488px;
+  height: 117px;
+}
+.name-child1 {
+  top: 0;
+  left: 91px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-beige-100);
+  width: 397px;
+  height: 46px;
+}
+
+.input-text-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-mini);
+  background-color: var(--color-beige-100);
+  width: 488px;
+  height: 117px;
+}
+
+.input-text-area::placeholder{
+  padding: 0px 0px;
+  font-size: 1.2rem;
+  color: #192F32;
+}
+
+input[type=textarea]{
+  padding: 2px 20px;
+  color: #192F32;
+  font-size: 1.2rem;
+}
+
+.input-name{
+  top: 0;
+  left: 0px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-beige-100);
+  width: 1000px;
+  height: 40px;
+}
+
+.input-name::placeholder{
+  padding: 2px 0px;
+  font-size: 1.2rem;
+  color: #192F32;
+}
+
+.input-name[type=text]{
+  padding: 2px 20px;
+  color: #192F32;
+  font-size: 1.2rem;
+  border: none;
+}
+
+.input-email{
+  top: 0;
+  left: 0px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-beige-100);
+  width: 1000px;
+  height: 40px;
+}
+
+.input-email::placeholder{
+  padding: 2px 0px;
+  font-size: 1.2rem;
+  color: #192F32;
+}
+
+.input-email[type=text]{
+  padding: 2px 20px;
+  color: #192F32;
+  font-size: 1.2rem;
+  border: none;
+}
+
+.xyz3 {
+  top: 9px;
+  left: 99px;
+  display: flex;
+  align-items: center;
+  width: 358px;
+  height: 28px;
+}
+.name6,
+.name7,
+.xyz3 {
+  position: absolute;
+}
+.name7 {
+  top: 9px;
+  left: 0;
+  font-size: var(--font-size-6xl);
+  color: var(--color-beige-100);
+  display: inline-block;
+  width: 79px;
+  height: 30px;
+}
+.name6 {
+  top: 242px;
+  left: 33px;
+  width: 488px;
+  height: 46px;
+}
+.email7,
+.xyzgmailcom3 {
+  position: absolute;
+  top: 8px;
+}
+.xyzgmailcom3 {
+  left: 99px;
+  display: flex;
+  align-items: center;
+  width: 358px;
+  height: 28px;
+}
+.email7 {
+  left: 0;
+  font-size: var(--font-size-6xl);
+  color: var(--color-beige-100);
+  display: inline-block;
+  width: 79px;
+  height: 30px;
+}
+.contact-us6,
+.email6 {
+  position: absolute;
+  top: 306px;
+  left: 33px;
+  width: 488px;
+  height: 46px;
+}
+.contact-us6 {
+  top: 0;
+  left: 0;
+  font-size: var(--font-size-41xl);
+  font-family: var(--font-berlin-sans-fb);
+  color: var(--color-beige-100);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 333px;
+  height: 98px;
+}
+.contact3 {
+  position: absolute;
+  top: 25px;
+  left: 4%;
+  width: 521px;
+  height: 352px;
+  font-size: var(--font-size-xl);
+}
+.footer3 {
+  position: absolute;
+  top: 1103px;
+  left: 0;
+  width: 100%;
+  height: 489px;
+  text-align: left;
+  font-family: var(--font-brawler);
+}
+.bg-svg-icon2 {
+  position: absolute;
+  height: 40.2%;
+  width: 47.68%;
+  top: 4.33%;
+  right: 4.36%;
+  bottom: 55.46%;
+  left: 50%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.nav-child1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-darkslategray-100);
+  width: 1280px;
+  height: 69px;
+}
+.home7 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 89px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.nav-components-child3 {
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  height: 50.96px;
+}
+.contact-us7,
+.nav-components3 {
+  display: flex;
+  align-items: center;
+}
+.contact-us7 {
+  position: relative;
+  justify-content: center;
+  width: 140px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.nav-components3 {
+  position: absolute;
+  top: 10px;
+  left: 928px;
+  width: 278.65px;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: var(--gap-5xs);
+}
+.freepik-house-inject-104-icon7 {
+  position: absolute;
+  height: 73.76%;
+  width: 14.47%;
+  top: 15.69%;
+  right: 85.76%;
+  bottom: 10.55%;
+  left: -0.23%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.f7 {
+  font-size: var(--font-size-13xl);
+}
+.our7 {
+  font-size: var(--font-size-8xl);
+}
+.findyourstay7 {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  display: flex;
+  align-items: flex-end;
+  width: 182px;
+  height: 51px;
+}
+.logo7 {
+  position: absolute;
+  height: 73.91%;
+  width: 16.88%;
+  top: 13.04%;
+  bottom: 13.04%;
+  left: 1.09%;
+  text-align: left;
+  font-size: var(--font-size-8xl);
+  color: var(--color-beige-100);
+  font-family: var(--font-berlin-sans-fb);
+}
+.about-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.nav3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 69px;
+  font-size: var(--font-size-6xl);
+  color: var(--color-white);
+}
+.about-child {
+  border-radius: var(--br-3xl);
+  background-color: var(--color-beige-200);
+  backdrop-filter: blur(5px);
+  border: 1.7px solid var(--color-darkslategray-300);
+  box-sizing: border-box;
+  width: 943px;
+  height: 802px;
+}
+.blank-line {
+  margin: 0;
+}
+.adress-txt {
+  padding-top: -12px;
+  left: 5px;
+  width: 100%;
+  font-size: 22px;
+  text-align: center;
+}
+.adress5 {
+  position: absolute;
+  top: 140px;
+  left: 82px;
+  display: flex;
+  align-items: flex-end;
+  width: 778px;
+  height: 581px;
+}
+.about-item {
+  position: absolute;
+  top: 94.5px;
+  left: 270.5px;
+  border-top: 3px solid var(--color-darkslategray-200);
+  box-sizing: border-box;
+  width: 403px;
+  height: 3px;
+}
+.find-your-stay {
+  position: absolute;
+  top: 50px;
+  left: 161px;
+  font-size: var(--font-size-25xl);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 621px;
+  height: 30px;
+}
+.about {
+  position: absolute;
+  top: 185px;
+  left: 20%;
+  width: 943px;
+  height: 802px;
+  font-size: var(--font-size-5xl);
+  color: var(--color-darkslategray-100);
+}
+.about-us5 {
+  position: relative;
+  background-color: var(--color-beige-100);
+  width: 100%;
+  height: 1592px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-lgi);
+  color: var(--color-black);
+  font-family: var(--font-cabin);
+}
+
+
+.nav-components-inner {
+  flex: 1;
+  position: relative;
+  border-right: 1.5px solid var(--color-white);
+  box-sizing: border-box;
+  height: 50.96px;
+}
+
+.nav-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-darkslategray-100);
+  width: 100%;
+  height: 50px;
+}
+
+.nav-components-child {
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  height: 36px;
+} 
+
+.nav-components {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  position: absolute;
+  top: 8px;
+  width: 577.09px;
+  left: 75%;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: var(--gap-5xs);
+}
+.nav{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  color: var(--color-white);
+  font-family: var(--font-cabin);
+}
+.contact-us1{
+  display: flex;
+  align-items: center;
+  left: -300px;
+}
+.contact-us1 {
+  position: relative;
+  justify-content: center;
+  width: 132px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.features2 {
+  font-size: 18px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 111px;
+  flex-shrink: 0;
+  cursor: pointer;
+  width: 93px;
+}
+
+.logo2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 445.53px;
+  height: 70px;
+}
+.f2 {
+  font-size: var(--font-size-31xl);
+}
+.our2 {
+  font-size: var(--font-size-21xl);
+}
+.stay2 {
+  color: var(--color-orange);
+}
+.findyourstay-txt2 {
+  line-break: anywhere;
+  width: 100%;
+}
+.findyourstay2 {
+  position: absolute;
+  top: 5.64px;
+  left: 66.55px;
+  display: flex;
+  align-items: flex-end;
+  width: 378.99px;
+  height: 64.36px;
+}
+.freepik-house-inject-104-icon2 {
+  position: absolute;
+  height: 86.46%;
+  width: 15.07%;
+  top: 0;
+  right: 85.04%;
+  bottom: 13.54%;
+  left: -0.11%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}

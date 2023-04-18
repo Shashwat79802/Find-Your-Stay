@@ -1,0 +1,425 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/search.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Brawler:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Berlin Sans FB:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&display=swap"
+    />
+      <title>FindYourStay</title>
+  </head>
+  <body>
+    <div class="search1">
+      <div class="footer1">
+        <div class="copyright1">
+          <div class="copyright-child"></div>
+          <div class="copyrightinc1">@copyright.Inc</div>
+        </div>
+        <div class="footer-inner"></div>
+        <img class="line-icon" alt="" src="{% static 'image/line-11.svg' %}" />
+        <div class="sitemap1">
+          <div class="logo2">
+            <div class="findyourstay2">
+              <span class="findyourstay-txt2"
+                ><span
+                  ><span class="f2">F</span><span>ind</span
+                  ><span class="f2">Y</span><span class="our2">our</span></span
+                ><span class="stay2"
+                  ><span class="f2">S</span><span>tay</span></span
+                ></span
+              >
+            </div>
+            <img
+              class="freepik-house-inject-104-icon2"
+              alt=""
+              src="{% static 'image/freepikhouseinject1042.svg' %}"
+            />
+          </div>
+          <div class="home-group">
+            <div class="home2" id="homeText">Home</div>
+            <div class="about-us3" id="aboutUsText">About Us</div>
+            <div class="features3" id="featuresText">Featured</div>
+          </div>
+        </div>
+        <div class="contact1" data-scroll-to="contactContainer">
+          <div class="textbox1">
+            <div class="textbox-item"></div>
+            <div class="write-down-your1"><input class="input-text-area" type="textarea" placeholder="write down your queries here..."></div>
+          </div>
+          <div class="name2">
+            <div class="name-item"></div>
+            <div class="xyz1"><input class="input-name" type="text" placeholder="xyz"></div>
+            <div class="name3">Name:</div>
+          </div>
+          <div class="email2">
+            <div class="name-item"></div>
+            <div class="xyzgmailcom1"><input class="input-email" type="text" placeholder="xyz@gmail.com"></div>
+            <div class="email3">Email:</div>
+          </div>
+          <div class="contact-us2">Contact Us</div>
+        </div>
+      </div>
+      <img class="bg-svg-icon" alt="" src="{% static 'image/bg-svg.svg' %}" />
+      <div class="most-relevant" id="most-relevant">
+        <div class="most-relevant-child"></div>
+        <img class="most-relevant-item" alt="" src="{% static 'image/line-12.svg' %}" />
+        <div class="most-relevant-in">Most Relevant results for you</div>
+        <!-- <div class="search-result-4" id="searchResult4">
+          <img
+            class="download-1-icon"
+            alt=""
+            src="../public/download-1@2x.png"
+          />
+          <div class="hotel-name">Hotel Amit International, Bhilai</div>
+          <img class="rating-icon" alt="" src="../public/rating.svg" />
+          <div class="reviews">Reviews</div>
+          <div class="adress">
+            6946+X3Q, B-C/3, Shivnath Vistar Vyavsayik Yojana, G.E.Road,
+            National Highway 6, Supela, next to Maurya Talkies, Shastri Nagar,
+            Bhilai, Chhattisgarh 490023
+          </div>
+        </div>
+        <div class="search-result-5" id="searchResult5">
+          <img
+            class="download-1-icon"
+            alt=""
+            src="../public/download-1@2x.png"
+          />
+          <div class="hotel-name">Hotel Amit International, Bhilai</div>
+          <img class="rating-icon" alt="" src="../public/rating.svg" />
+          <div class="reviews">Reviews</div>
+          <div class="adress">
+            6946+X3Q, B-C/3, Shivnath Vistar Vyavsayik Yojana, G.E.Road,
+            National Highway 6, Supela, next to Maurya Talkies, Shastri Nagar,
+            Bhilai, Chhattisgarh 490023
+          </div>
+        </div> -->
+
+        <div class="search-result-3" id="searchResult3">
+          <img
+            class="download-1-icon"
+            alt=""
+            src="{% static 'image/download-1@2x.png' %}"
+          />
+          <div class="hotel-name">Hotel Amit International, Bhilai</div>
+          <img class="rating-icon" alt="" src="{% static 'image/rating.svg' %}" />
+          <div class="reviews">Reviews</div>
+          <div class="adress">
+            6946+X3Q, B-C/3, Shivnath Vistar Vyavsayik Yojana, G.E.Road,
+            National Highway 6, Supela, next to Maurya Talkies, Shastri Nagar,
+            Bhilai, Chhattisgarh 490023
+          </div>
+        </div>
+
+{#        <div class="search-result-2" id="searchResult2">#}
+{#          <img#}
+{#            class="download-1-icon"#}
+{#            alt=""#}
+{#            src="{% static 'image/download-1@2x.png' %}"#}
+{#          />#}
+{#          <div class="hotel-name">Hotel Amit International, Bhilai</div>#}
+{#          <img class="rating-icon" alt="" src="{% static 'image/rating.svg' %}" />#}
+{#          <div class="reviews">Reviews</div>#}
+{#          <div class="adress">#}
+{#            6946+X3Q, B-C/3, Shivnath Vistar Vyavsayik Yojana, G.E.Road,#}
+{#            National Highway 6, Supela, next to Maurya Talkies, Shastri Nagar,#}
+{#            Bhilai, Chhattisgarh 490023#}
+{#          </div>#}
+{#        </div>#}
+{#        <div class="search-result-1" id="searchResult1">#}
+{#          <img#}
+{#            class="download-1-icon"#}
+{#            alt=""#}
+{#            src="{% static 'image/download-1@2x.png' %}"#}
+{#          />#}
+{#          <div class="hotel-name">Hotel Amit International, Bhilai</div>#}
+{#          <img class="rating-icon" alt="" src="{% static 'image/rating.svg' %}" />#}
+{#          <div class="reviews">Reviews</div>#}
+{#          <div class="adress">#}
+{#            6946+X3Q, B-C/3, Shivnath Vistar Vyavsayik Yojana, G.E.Road,#}
+{#            National Highway 6, Supela, next to Maurya Talkies, Shastri Nagar,#}
+{#            Bhilai, Chhattisgarh 490023#}
+{#          </div>#}
+{#        </div>#}
+      </div>
+      <!-- <div class="top-results">
+        <div class="top-results-child"></div>
+        <img class="most-relevant-item" alt="" src="../public/line-12.svg" />
+        <div class="top-results-in">Top Results in “Durg”</div>
+        <div class="search-result" id="searchResult">
+          <img
+            class="download-1-icon"
+            alt=""
+            src="../public/download-1@2x.png"
+          />
+          <div class="hotel-name">Hotel Amit International, Bhilai</div>
+          <img class="rating-icon" alt="" src="../public/rating.svg" />
+          <div class="reviews">Reviews</div>
+          <div class="adress">
+            6946+X3Q, B-C/3, Shivnath Vistar Vyavsayik Yojana, G.E.Road,
+            National Highway 6, Supela, next to Maurya Talkies, Shastri Nagar,
+            Bhilai, Chhattisgarh 490023
+          </div>
+        </div>
+      </div> -->
+{#      <form method="get" action="{% url 'search' %}">#}
+                                                            Temporary comment
+        <div class="search2">
+            <form method="get" action="{% url 'search' %}">
+            <div class="search-bar2">
+              <div class="search-bar-item"></div>
+              <div class="durg"><input class="input-field" name="q" id="q" type="text" placeholder="Enter location here"></div>
+              <button class="search-click" id="search-click" type="submit"><img class="search-2-icon" alt="" src="{% static 'image/search-2@2x.png' %}" /></button>
+            </div>
+            <div class="button2">
+              <!-- <div class="button-inner"></div>
+              <div class="search3">Search</div> -->
+              <div class="preferences">
+                <button onclick="myFunction()" class="dropbtn">Preferences</button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="#">Ratings(High to Low)</a>
+                  <a href="#">Ratings(Low to High)</a>
+                  <a href="#">Price(Low to High)</a>
+                  <a href="#">Price(High to Low)</a>
+                </div>
+              </div>
+            </div>
+            </form>
+        </div>
+      </form>
+                                                            {#Temporary comment#}
+{##}
+{#        <form method="get" action="{% url 'search' %}">#}
+{#    <div class="search2">#}
+{#        <div class="search-bar2">#}
+{#            <div class="search-bar-item"></div>#}
+{#            <div class="durg"><input class="input-field" name="q" id="q" type="text" placeholder="Enter location here" onkeydown="if (event.keyCode === 13) document.getElementById('search-click').click()" />#}
+{#</div>#}
+{#            <button class="search-click" id="search-click" type="submit"><img class="search-2-icon" alt="" src="{% static 'image/search-2@2x.png' %}" /></button>#}
+{#        </div>#}
+{#        <div class="button2">#}
+{#            <div class="preferences">#}
+{#                <button id="dropdown-btn" class="dropbtn">Preferences</button>#}
+{#                <div id="myDropdown" class="dropdown-content">#}
+{#                    <a href="#" id="sort-rating-high">Ratings(High to Low)</a>#}
+{#                    <a href="#" id="sort-rating-low">Ratings(Low to High)</a>#}
+{#                    <a href="#" id="sort-price-low">Price(Low to High)</a>#}
+{#                    <a href="#" id="sort-price-high">Price(High to Low)</a>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</form>#}
+
+      <!-- <div class="nav1">
+        <div class="nav-item"></div>
+        <div class="nav-components1">
+          <div class="feature3" id="featureclick">Featured</div>
+          <img
+            class="nav-components-child1"
+            alt=""
+            src="../public/line-21.svg"
+          />
+          <div class="contact-us3" id="contactUsText1">Contact Us</div>
+        </div>
+        <div class="logo3" id="logo3">
+          <img
+            class="freepik-house-inject-104-icon3"
+            alt=""
+            src="../public/freepikhouseinject1043.svg"
+          />
+          <div class="findyourstay3">
+            <span class="findyourstay-txt2"
+              ><span
+                ><span class="f3">F</span><span>ind</span
+                ><span class="f3">Y</span><span class="our3">our</span></span
+              ><span class="stay2"
+                ><span class="f3">S</span><span>tay</span></span
+              ></span
+            >
+          </div>
+        </div>
+      </div> -->
+      <div class="nav">
+        <div class="nav-child"></div>
+        <div class="nav-components">
+          <div class="features2" id="featuresText2">Featured</div>
+          <img class="nav-components-child" alt="" src="{% static 'image/line-3.svg' %}" />
+          <div class="contact-us1" id="contactUsText1">Contact Us</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+{#ChatGPT#}
+{#    const executeSearch = () => {#}
+{#        const query = document.getElementById('q').value;#}
+{#        const preference = document.getElementById('myDropdown').getAttribute('data-value');#}
+{#        window.location.href = `{% url 'search' %}?q=${query}&sort_by=${preference}`;#}
+{#    };#}
+{##}
+{#    const searchButton = document.getElementById('search-click');#}
+{#    searchButton.addEventListener('click', executeSearch);#}
+{##}
+{#      var homeText = document.getElementById("homeText");#}
+{#      if (homeText) {#}
+{#        homeText.addEventListener("click", function (e) {#}
+{#          window.location.href = "{% url 'index' %}";#}
+{#        });#}
+{#      }#}
+{##}
+{#      var logo3 = document.getElementById("logo3");#}
+{#      if (logo3) {#}
+{#        logo3.addEventListener("click", function (e) {#}
+{#          window.location.href = "{% url 'index' %}";#}
+{#        });#}
+{#      }#}
+{##}
+{##}
+{#      document.addEventListener("DOMContentLoaded", function() {#}
+{#  var dropdownBtn = document.getElementById("dropdown-btn");#}
+{#  var ratingHighBtn = document.getElementById("sort-rating-high");#}
+{#  var ratingLowBtn = document.getElementById("sort-rating-low");#}
+{#  var priceLowBtn = document.getElementById("sort-price-low");#}
+{#  var priceHighBtn = document.getElementById("sort-price-high");#}
+{##}
+{#  // Prevent query execution when preferences button is clicked#}
+{#  dropdownBtn.addEventListener("click", function(event) {#}
+{#    event.preventDefault();#}
+{#  });#}
+{##}
+{#  // Set query parameter when preference is clicked#}
+{#  ratingHighBtn.addEventListener("click", function(event) {#}
+{#    event.preventDefault();#}
+{#    document.getElementById("sort-by").value = "rating_high";#}
+{#  });#}
+{#  ratingLowBtn.addEventListener("click", function(event) {#}
+{#    event.preventDefault();#}
+{#    document.getElementById("sort-by").value = "rating_low";#}
+{#  });#}
+{#  priceLowBtn.addEventListener("click", function(event) {#}
+{#    event.preventDefault();#}
+{#    document.getElementById("sort-by").value = "price_low";#}
+{#  });#}
+{#  priceHighBtn.addEventListener("click", function(event) {#}
+{#    event.preventDefault();#}
+{#    document.getElementById("sort-by").value = "price_high";#}
+{#  });#}
+{##}
+{#  // Submit form when search icon is clicked or enter key is pressed#}
+{#  var searchBtn = document.getElementById("search-click");#}
+{#  var searchInput = document.getElementById("q");#}
+{#  searchBtn.addEventListener("click", function(event) {#}
+{#    event.preventDefault();#}
+{#    document.getElementById("search-form").submit();#}
+{#  });#}
+{#  searchInput.addEventListener("keydown", function(event) {#}
+{#    if (event.keyCode === 13) {#}
+{#      event.preventDefault();#}
+{#      document.getElementById("search-form").submit();#}
+{#    }#}
+{#  });#}
+{# });#}
+{##}
+{#function getSearchUrl() {#}
+{#  let url = "/search?";#}
+{#  let inputVal = document.getElementById("q").value;#}
+{#  let sortVal = document.getElementById("sort_by").value;#}
+{##}
+{#  if (inputVal) {#}
+{#    url += "q=" + inputVal + "&";#}
+{#  }#}
+{#  if (sortVal) {#}
+{#    url += "sort_by=" + sortVal;#}
+{#  }#}
+{#  return url;#}
+{# }#}
+{##}
+{#ChatGPT#}
+
+
+      var aboutUsText = document.getElementById("aboutUsText");
+      if (aboutUsText) {
+        aboutUsText.addEventListener("click", function (e) {
+          window.location.href = "{% url 'about-us' %}";
+        });
+      }
+      
+      var featuresText = document.getElementById("featuresText2");
+      if (featuresText) {
+        featuresText.addEventListener("click", function (e) {
+          window.location.href = "{% url 'index' %}#featurelink";
+        });
+      }
+      
+      var searchResult = document.getElementById("searchResult");
+      if (searchResult) {
+        searchResult.addEventListener("click", function (e) {
+          window.location.href = "/";
+        });
+      }
+      
+      var featureclick = document.getElementById("featureclick");
+      if (featureclick) {
+        featureclick.addEventListener("click", function (e) {
+          window.location.href = "{% url 'index' %}#featurelink";
+        });
+      }
+      
+      var contactUsText1 = document.getElementById("contactUsText1");
+      if (contactUsText1) {
+        contactUsText1.addEventListener("click", function () {
+          var anchor = document.querySelector("[data-scroll-to='contactContainer']");
+          if (anchor) {
+            anchor.scrollIntoView({ block: "start", behavior: "smooth" });
+          }
+        });
+      }
+
+      var searchClick = document.getElementById("search-click");
+      if (searchClick) {
+        searchClick.addEventListener("click", function (e) {
+          window.location.href = "/";
+        });
+      }
+// yha tumhe link dalni hai - this is search icon
+
+
+// dropdown
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+
+      </script>
+  </body>
+</html>
