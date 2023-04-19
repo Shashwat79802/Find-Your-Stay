@@ -111,6 +111,26 @@
             Bhilai, Chhattisgarh 490023
           </div>
         </div> -->
+
+{#      <div class="row>">#}
+{#        {% for inner_list in result %}#}
+{#                <div class="search-result-3" id="searchResult3">#}
+{#                  <img#}
+{#                    class="download-1-icon"#}
+{#                    alt=""#}
+    {#                src="{% static 'image/download-1@2x.png' %}"#}
+{#                    src = "{{ inner_list.2 }}"#}
+{#                  />#}
+{#                    <a href="{{ inner_list.6 }}"><div class="hotel-name">{{ inner_list.0 }}</div></a>#}
+{#                  <img class="rating-icon" alt="" src="{% static 'image/rating.svg' %}" />#}
+{#                  <div class="reviews">{{ inner_list.5 }}</div>#}
+{#                  <div class="adress">#}
+{#                    {{ inner_list.3 }}#}
+{#                  </div>#}
+{#                </div>#}
+{#        {% endfor %}#}
+{#      </div>#}
+
       <div class="row>">
         {% for inner_list in result %}
                 <div class="search-result-3" id="searchResult3">
@@ -121,8 +141,9 @@
                     src = "{{ inner_list.2 }}"
                   />
                     <a href="{{ inner_list.6 }}"><div class="hotel-name">{{ inner_list.0 }}</div></a>
-                  <img class="rating-icon" alt="" src="{% static 'image/rating.svg' %}" />
+                    <div class="rating-icon"><span class="Rs">Rs.</span>1386</div>
                   <div class="reviews">{{ inner_list.5 }}</div>
+{#                    inner_list.5 ki jgh ratings ayenga#}
                   <div class="adress">
                     {{ inner_list.3 }}
                   </div>
