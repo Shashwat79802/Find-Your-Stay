@@ -1,0 +1,9 @@
+venv
+data/oyo.csv
+data/data.csv.csv
+data/yatra.csv
+FindYourStay/data/data.csv
+FindYourStay/data/yatra.csv
+FindYourStay/data/oyo.csv
+.idea
+db.sqlite3
