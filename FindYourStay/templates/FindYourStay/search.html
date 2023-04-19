@@ -111,23 +111,24 @@
             Bhilai, Chhattisgarh 490023
           </div>
         </div> -->
-
-        <div class="search-result-3" id="searchResult3">
-          <img
-            class="download-1-icon"
-            alt=""
-            src="{% static 'image/download-1@2x.png' %}"
-          />
-          <div class="hotel-name">Hotel Amit International, Bhilai</div>
-          <img class="rating-icon" alt="" src="{% static 'image/rating.svg' %}" />
-          <div class="reviews">Reviews</div>
-          <div class="adress">
-            6946+X3Q, B-C/3, Shivnath Vistar Vyavsayik Yojana, G.E.Road,
-            National Highway 6, Supela, next to Maurya Talkies, Shastri Nagar,
-            Bhilai, Chhattisgarh 490023
-          </div>
-        </div>
-
+      <div class="row>">
+        {% for inner_list in result %}
+                <div class="search-result-3" id="searchResult3">
+                  <img
+                    class="download-1-icon"
+                    alt=""
+    {#                src="{% static 'image/download-1@2x.png' %}"#}
+                    src = "{{ inner_list.2 }}"
+                  />
+                    <a href="{{ inner_list.6 }}"><div class="hotel-name">{{ inner_list.0 }}</div></a>
+                  <img class="rating-icon" alt="" src="{% static 'image/rating.svg' %}" />
+                  <div class="reviews">{{ inner_list.5 }}</div>
+                  <div class="adress">
+                    {{ inner_list.3 }}
+                  </div>
+                </div>
+        {% endfor %}
+      </div>
 {#        <div class="search-result-2" id="searchResult2">#}
 {#          <img#}
 {#            class="download-1-icon"#}
@@ -189,8 +190,6 @@
               <button class="search-click" id="search-click" type="submit"><img class="search-2-icon" alt="" src="{% static 'image/search-2@2x.png' %}" /></button>
             </div>
             <div class="button2">
-              <!-- <div class="button-inner"></div>
-              <div class="search3">Search</div> -->
               <div class="preferences">
                 <button onclick="myFunction()" class="dropbtn">Preferences</button>
                 <div id="myDropdown" class="dropdown-content">
@@ -203,7 +202,7 @@
             </div>
             </form>
         </div>
-      </form>
+
                                                             {#Temporary comment#}
 {##}
 {#        <form method="get" action="{% url 'search' %}">#}

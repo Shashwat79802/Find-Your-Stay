@@ -284,6 +284,8 @@ def yatra_scrapper(city):
         if r != '':
             limit = r.find('/5')
             float_ratings.append(float(r[0:limit]))
+        else:
+            float_ratings.append(4)
 
     with open('data/yatra.csv', mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
@@ -515,6 +517,16 @@ def scrapper(city, state, sort=None, ascending=None):
 # -----------------------------------------------------------------------------------------------------------------------
 
 
+def get_data(filename):
+    data_list = []
+    with open(filename, 'r') as csv_file:
+        csv_reader = csv.reader(csv_file)
+        next(csv_reader)  # skip header row
+        for row in csv_reader:
+            data_list.append(row)
+    return data_list
+
+
 def index(request):
     return render(request, 'FindYourStay/index.html', {})
 
@@ -526,4 +538,5 @@ def about_us(request):
 def search(request):
     query = (request.GET['q']).split(', ')
     scrapper(query[0], query[1])
-    return render(request, 'FindYourStay/search.html', {})
+    result = get_data('data/data.csv')
+    return render(request, 'FindYourStay/search.html', {'result': result})
