@@ -77,6 +77,7 @@
         </div>
       </div>
       <img class="bg-svg-icon" alt="" src="{% static 'image/bg-svg.svg' %}" />
+      <div class="next"></div>
       <div class="most-relevant" id="most-relevant">
         <div class="most-relevant-child"></div>
         <img class="most-relevant-item" alt="" src="{% static 'image/line-12.svg' %}" />
@@ -134,6 +135,7 @@
       <div class="row>">
         {% for inner_list in result %}
                 <div class="search-result-3" id="searchResult3">
+
                   <img
                     class="download-1-icon"
                     alt=""
@@ -147,7 +149,9 @@
                   <div class="adress">
                     {{ inner_list.3 }}
                   </div>
+                <img class="line-break" alt="" src="{% static 'image/line-12.svg' %}" />
                 </div>
+
         {% endfor %}
       </div>
 {#        <div class="search-result-2" id="searchResult2">#}

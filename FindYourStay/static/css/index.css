@@ -594,25 +594,28 @@ input[type=textarea]{
   height: 298px;
   font-size: 68px;
 }
-.button-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: var(--br-6xl);
-  background-color: var(--color-orange);
-  width: 169.77px;
-  height: 55px;
-}
+/*.button-item {*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  border-radius: var(--br-6xl);*/
+/*  background-color: var(--color-orange);*/
+/*  width: 169.77px;*/
+/*  height: 55px;*/
+/*}*/
 .search {
-  position: absolute;
-  top: 11px;
-  left: 22.27px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 126.17px;
-  height: 31px;
+  font-weight: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: var(--br-6xl);
+    background-color: var(--color-orange);
+    width: 169.77px;
+    height: 55px;
+    font-size: 24px;
 }
 .button1 {
   position: absolute;
