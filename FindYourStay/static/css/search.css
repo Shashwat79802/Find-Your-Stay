@@ -299,17 +299,14 @@ input[type=textarea]{
   font-size: var(--font-size-xl);
 }
 .footer1 {
-  position: absolute;
-  top: 25px;
-  left: 27px;
-  height: 352px;
-  top: 1150px;
-  left: 0;
-  width: 1500px;
-  height: 489px;
-  font-size: var(--font-size-lgi);
-  color: var(--color-black);
-  font-family: var(--font-brawler);
+      position: absolute;
+    top: 80.8%;
+    left: 0;
+    width: 1500px;
+    height: 489px;
+    font-size: var(--font-size-lgi);
+    color: var(--color-black);
+    font-family: var(--font-brawler);
 }
 .bg-svg-icon {
   position: absolute;
@@ -324,16 +321,16 @@ input[type=textarea]{
   max-height: 100%;
 }
 .most-relevant-child {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: var(--br-3xl);
-  background-color: var(--color-beige-200);
-  backdrop-filter: blur(5px);
-  border: 1.7px solid var(--color-darkslategray-300);
-  box-sizing: border-box;
-  width: 943px;
-  height: 691px;
+      position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: var(--br-3xl);
+    background-color: var(--color-beige-200);
+    backdrop-filter: blur(5px);
+    border: 1.7px solid var(--color-darkslategray-300);
+    box-sizing: border-box;
+    width: 943px;
+    height: 79%;
 }
 .most-relevant-item {
   position: absolute;
@@ -360,16 +357,20 @@ input[type=textarea]{
   width: 274px;
   height: 173px;
   object-fit: cover;
+  border-color: #192F32;
+  border-width: medium;
+  border-radius: 10px;
 }
 .hotel-name {
   position: absolute;
-  top: 7px;
-  left: 291px;
-  font-weight: 500;
-  color: var(--color-gray-200);
-  display: inline-block;
-  width: 386px;
-  height: 50px;
+    top: 0px;
+    left: 291px;
+    font-weight: 400;
+    color: var(--color-gray-200);
+    display: inline-block;
+    width: 75%;
+    height: 70px;
+    font-size: 24px;
 }
 
 .Rs{
@@ -381,11 +382,13 @@ input[type=textarea]{
 }
 
 .rating-icon{
-  position: absolute;
-  top: 45px;
-  width: 90%;
-  height: 25px;
-  left: 291px;
+      position: absolute;
+    top: 55%;
+    width: 90%;
+    height: 25px;
+    left: 291px;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 /*.adress,*/
@@ -409,18 +412,17 @@ input[type=textarea]{
 
 .adress,
 .reviews {
-  top: 91px;
-  font-size: var(--font-size-lg);
-  display: flex;
-  align-items: flex-end;
-  width: 60%;
-  height: 22px;
+      top: 68%;
+    font-size: var(--font-size-lg);
+    display: flex;
+    align-items: flex-end;
+    width: 90%;
+    height: 22px;
 }
 .adress {
-  top: 135px;
-  font-size: var(--font-size-sm);
-  width: 456px;
-  height: 32px;
+    top: 135px;
+    font-size: 16px;
+    height: 34px;
 }
 
 .row>{
@@ -433,7 +435,15 @@ input[type=textarea]{
   width: 747px;
   height: 167px;
   cursor: pointer;
-  margin-bottom: 30px;
+  margin-bottom: 55px;
+}
+
+.line-break {
+    position: relative;
+    top: 97%;
+    left: 9%;
+    width: 100%;
+    height: 3px;
 }
 
 /*.search-result-1,*/
@@ -456,10 +466,10 @@ input[type=textarea]{
 }
 .most-relevant{
   position: absolute;
-  top: 386px;
-  left: 18%;
-  width: 943px;
-  height: 691px;
+    top: 12%;
+    left: 18%;
+    width: 943px;
+    height: 82.5%;
 }
 .top-results-child {
   position: absolute;
@@ -595,7 +605,7 @@ input[type=text]{
 }
 .search2 {
   position: absolute;
-  top: 185px;
+  top: 6%;
   left: 22%;
   width: 844px;
   height: 133px;
@@ -700,14 +710,14 @@ input[type=text]{
 } */
 .search1 {
   position: relative;
-  background-color: var(--color-beige-100);
-  width: 100%;
-  height: 1639px;
-  overflow: hidden;
-  text-align: left;
-  font-size: var(--font-size-6xl);
-  color: var(--color-darkslategray-100);
-  font-family: var(--font-cabin);
+    background-color: var(--color-beige-100);
+    width: 100%;
+    height: 2530px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-6xl);
+    color: var(--color-darkslategray-100);
+    font-family: var(--font-cabin);
 }
 
 
@@ -790,6 +800,7 @@ input[type=text]{
 }
 
 .nav-components-child {
+  left: -25%;
   flex: 1;
   position: relative;
   max-width: 100%;
