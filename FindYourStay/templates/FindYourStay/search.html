@@ -1,8 +1,11 @@
 {% load static %}
+{% load django_bootstrap5 %}
 
 <!DOCTYPE html>
 <html  lang="en">
   <head>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <link rel="stylesheet" href="{% static 'css/global.css' %}" />
@@ -22,6 +25,11 @@
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&display=swap"
+    />
+    <link rel=”stylesheet”
+          href=”https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css”rel=”nofollow”
+          integrity=”sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I”
+          crossorigin="anonymous"
     />
       <title>FindYourStay</title>
   </head>
@@ -81,7 +89,7 @@
       <div class="most-relevant" id="most-relevant">
         <div class="most-relevant-child"></div>
         <img class="most-relevant-item" alt="" src="{% static 'image/line-12.svg' %}" />
-        <div class="most-relevant-in">Most Relevant results for you</div>
+        <div class="most-relevant-in">Most relevant {{ length }} results for you</div>
         <!-- <div class="search-result-4" id="searchResult4">
           <img
             class="download-1-icon"
@@ -154,6 +162,29 @@
 
         {% endfor %}
       </div>
+
+      <nav aria-label="Page navigation example" >
+          <ul class="pagination" id="pagination">
+            {% if result.has_previous %}
+                <li class="page-item">
+                  <a class="page-link" href="{{ url }}&page={{ result.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+            {% endif %}
+          {% for num in page_list %}
+            <li class="page-item"><a class="page-link" href="{{ url }}&page={{ num }}">{{ num }}</a></li>
+          {% endfor %}
+            {% if result.has_next %}
+              <li class="page-item">
+                <a class="page-link" href="{{ url }}&page={{ result.next_page_number }}" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            {% endif %}
+          </ul>
+      </nav>
+
 {#        <div class="search-result-2" id="searchResult2">#}
 {#          <img#}
 {#            class="download-1-icon"#}
@@ -292,93 +323,12 @@
     </div>
 
     <script>
-{#ChatGPT#}
-{#    const executeSearch = () => {#}
-{#        const query = document.getElementById('q').value;#}
-{#        const preference = document.getElementById('myDropdown').getAttribute('data-value');#}
-{#        window.location.href = `{% url 'search' %}?q=${query}&sort_by=${preference}`;#}
-{#    };#}
-{##}
-{#    const searchButton = document.getElementById('search-click');#}
-{#    searchButton.addEventListener('click', executeSearch);#}
-{##}
-{#      var homeText = document.getElementById("homeText");#}
-{#      if (homeText) {#}
-{#        homeText.addEventListener("click", function (e) {#}
-{#          window.location.href = "{% url 'index' %}";#}
-{#        });#}
-{#      }#}
-{##}
-{#      var logo3 = document.getElementById("logo3");#}
-{#      if (logo3) {#}
-{#        logo3.addEventListener("click", function (e) {#}
-{#          window.location.href = "{% url 'index' %}";#}
-{#        });#}
-{#      }#}
-{##}
-{##}
-{#      document.addEventListener("DOMContentLoaded", function() {#}
-{#  var dropdownBtn = document.getElementById("dropdown-btn");#}
-{#  var ratingHighBtn = document.getElementById("sort-rating-high");#}
-{#  var ratingLowBtn = document.getElementById("sort-rating-low");#}
-{#  var priceLowBtn = document.getElementById("sort-price-low");#}
-{#  var priceHighBtn = document.getElementById("sort-price-high");#}
-{##}
-{#  // Prevent query execution when preferences button is clicked#}
-{#  dropdownBtn.addEventListener("click", function(event) {#}
-{#    event.preventDefault();#}
-{#  });#}
-{##}
-{#  // Set query parameter when preference is clicked#}
-{#  ratingHighBtn.addEventListener("click", function(event) {#}
-{#    event.preventDefault();#}
-{#    document.getElementById("sort-by").value = "rating_high";#}
-{#  });#}
-{#  ratingLowBtn.addEventListener("click", function(event) {#}
-{#    event.preventDefault();#}
-{#    document.getElementById("sort-by").value = "rating_low";#}
-{#  });#}
-{#  priceLowBtn.addEventListener("click", function(event) {#}
-{#    event.preventDefault();#}
-{#    document.getElementById("sort-by").value = "price_low";#}
-{#  });#}
-{#  priceHighBtn.addEventListener("click", function(event) {#}
-{#    event.preventDefault();#}
-{#    document.getElementById("sort-by").value = "price_high";#}
-{#  });#}
-{##}
-{#  // Submit form when search icon is clicked or enter key is pressed#}
-{#  var searchBtn = document.getElementById("search-click");#}
-{#  var searchInput = document.getElementById("q");#}
-{#  searchBtn.addEventListener("click", function(event) {#}
-{#    event.preventDefault();#}
-{#    document.getElementById("search-form").submit();#}
-{#  });#}
-{#  searchInput.addEventListener("keydown", function(event) {#}
-{#    if (event.keyCode === 13) {#}
-{#      event.preventDefault();#}
-{#      document.getElementById("search-form").submit();#}
-{#    }#}
-{#  });#}
-{# });#}
-{##}
-{#function getSearchUrl() {#}
-{#  let url = "/search?";#}
-{#  let inputVal = document.getElementById("q").value;#}
-{#  let sortVal = document.getElementById("sort_by").value;#}
-{##}
-{#  if (inputVal) {#}
-{#    url += "q=" + inputVal + "&";#}
-{#  }#}
-{#  if (sortVal) {#}
-{#    url += "sort_by=" + sortVal;#}
-{#  }#}
-{#  return url;#}
-{# }#}
-{##}
-{#ChatGPT#}
-
-
+    var homeText = document.getElementById("homeText");
+        if (homeText) {
+        homeText.addEventListener("click", function (e){
+          window.location.href = "{% url 'index' %}";
+        });
+    }
       var aboutUsText = document.getElementById("aboutUsText");
       if (aboutUsText) {
         aboutUsText.addEventListener("click", function (e) {

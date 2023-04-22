@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from django.core.paginator import Paginator
 
 
 # -----------------------------------------------------------------------------------------------------------------------
@@ -536,7 +537,32 @@ def about_us(request):
 
 
 def search(request):
-    query = (request.GET['q']).split(', ')
-    scrapper(query[0], query[1])
+
     result = get_data('data/data.csv')
-    return render(request, 'FindYourStay/search.html', {'result': result})
+    flag = False
+
+    if not result:                                  # if list is empty, execute the scrapper
+        query = (request.GET['q']).split(', ')
+        scrapper(query[0], query[1])
+        result = get_data('data/data.csv')
+
+    else:
+        query = (request.GET['q']).split(', ')
+        for data in result:                         # checking if the data in the file belongs to the requested city
+            if query[0] in data[0] or query[0] in data[3]:
+                flag = True                         # yes data belongs to the requested city
+                break
+
+        if not flag:
+            scrapper(query[0], query[1])
+            result = get_data('data/data.csv')
+
+    pages = Paginator(result, 7)
+    page_number = request.GET.get('page')
+    final_data = pages.get_page(page_number)
+    url = request.get_full_path()
+
+    if "&page=" in url:
+        url = url[:url.index("&page=")]
+
+    return render(request, 'FindYourStay/search.html', {'result': final_data, 'length': len(result), 'page_list': [x for x in range(1, pages.num_pages+1)], 'url': url})

@@ -610,12 +610,12 @@ input[type=textarea]{
     justify-content: center;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 25%;
     border-radius: var(--br-6xl);
     background-color: var(--color-orange);
-    width: 169.77px;
-    height: 55px;
-    font-size: 24px;
+    width: 73%;
+    height: 37px;
+    font-size: 16px;
 }
 .button1 {
   position: absolute;

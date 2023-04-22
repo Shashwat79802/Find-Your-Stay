@@ -5,5 +5,7 @@ data/yatra.csv
 FindYourStay/data/data.csv
 FindYourStay/data/yatra.csv
 FindYourStay/data/oyo.csv
-.idea
+.idea/
 db.sqlite3
+.vscode
+.idea/MiniProject.iml
