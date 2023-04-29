@@ -8,3 +8,4 @@ selenium
 pandas
 lxml
 django-bootstrap5
+redis[hiredis]

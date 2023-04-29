@@ -6,12 +6,24 @@ import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from django.core.paginator import Paginator
+from os.path import exists
+
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+
+def output_file_name_generator(city, state):
+    if ' ' in state:
+        state = state.split(' ')
+        state = ''.join(state)
+
+    return 'data/' + city + '_' + state + '.csv'
 
 
 # -----------------------------------------------------------------------------------------------------------------------
 
 
-def combine_csv(input_file1, input_file2):
+def combine_csv(input_file1, input_file2, output_file):
     # Read data from input files
     data1 = []
     with open(input_file1, 'r') as file1:
@@ -31,7 +43,7 @@ def combine_csv(input_file1, input_file2):
     combined_data = data1 + data2
 
     # Write combined data to output file
-    with open('data/data.csv', 'w', newline='') as outfile:
+    with open(output_file, 'w', newline='') as outfile:
         writer = csv.writer(outfile)
         writer.writerow(['Hotel Name', 'Price', 'Image', 'Address', 'Float Rating', 'Rating', 'Hotel URL'])
         for row in combined_data:
@@ -41,6 +53,7 @@ def combine_csv(input_file1, input_file2):
 # -----------------------------------------------------------------------------------------------------------------------
 
 
+# returns the longitude and latitude of the input city
 def forward_geocoding(city, state):
     url = "https://forward-reverse-geocoding.p.rapidapi.com/v1/forward"
 
@@ -246,8 +259,8 @@ def yatra_scrapper(city):
     hotel_names = []
     prices = []
     images = []
-    hotel_add = []
-    h_ratings = []
+    # hotel_add = []
+    # h_ratings = []
     ratings = []
     Address = []
     hotel_urls = []
@@ -309,16 +322,19 @@ def yatra_scrapper(city):
 
 # -----------------------------------------------------------------------------------------------------------------------
 
-
+# prime scrapper function that call all the other scrapper functions, cleans the data and combines it.
 def scrapper(city, state, sort=None, ascending=None):
     oyo_scrapper(city, state)
     yatra_scrapper(city)
     data_cleaner('data/oyo.csv')
     data_cleaner('data/yatra.csv')
-    combine_csv('data/oyo.csv', 'data/yatra.csv')
+
+    output_file = output_file_name_generator(city, state)
+
+    combine_csv('data/oyo.csv', 'data/yatra.csv', output_file)
 
     if sort is not None:
-        sort_csv('data/data.csv', 'data/data.csv', sort, ascending)
+        sort_csv(output_file, output_file, sort, ascending)
 
     print('Successful...')
 
@@ -536,33 +552,35 @@ def about_us(request):
     return render(request, 'FindYourStay/about-us.html', {})
 
 
+# function that fetches result according to the provided user input
 def search(request):
 
-    result = get_data('data/data.csv')
-    flag = False
+    query = (request.GET['q']).split(', ')  # getting the user input from the request query
+    print(query)
 
-    if not result:                                  # if list is empty, execute the scrapper
-        query = (request.GET['q']).split(', ')
-        scrapper(query[0], query[1])
-        result = get_data('data/data.csv')
+    required_file = output_file_name_generator(query[0], query[1])
+    required_file_exists = exists(required_file)  # fetching the main data from the file
+
+    if required_file_exists:
+        result = get_data(required_file)
 
     else:
-        query = (request.GET['q']).split(', ')
-        for data in result:                         # checking if the data in the file belongs to the requested city
-            if query[0] in data[0] or query[0] in data[3]:
-                flag = True                         # yes data belongs to the requested city
-                break
+        scrapper(query[0], query[1])
+        result = get_data(required_file)
 
-        if not flag:
-            scrapper(query[0], query[1])
-            result = get_data('data/data.csv')
+    pages = Paginator(result, 7)  # implementing pagination, and making a Paginator object i.e. pages
+    page_number = request.GET.get('page')  # getting which page number is requested
+    final_data = pages.get_page(page_number)  # fetching the requested page using its page number
+    url = request.get_full_path()  # taking the complete url of the current request to implement pagination query into it
 
-    pages = Paginator(result, 7)
-    page_number = request.GET.get('page')
-    final_data = pages.get_page(page_number)
-    url = request.get_full_path()
-
-    if "&page=" in url:
+    if "&page=" in url:  # removing the existing &page=n from the url to obtain the base url with the user input
         url = url[:url.index("&page=")]
 
-    return render(request, 'FindYourStay/search.html', {'result': final_data, 'length': len(result), 'page_list': [x for x in range(1, pages.num_pages+1)], 'url': url})
+    return render(request, 'FindYourStay/search.html', {
+        # data for the html page
+        'result': final_data,
+        'length': len(result),
+        'page_list': [x for x in range(1, pages.num_pages + 1)],
+        'url': url
+    }
+                  )
