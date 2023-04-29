@@ -238,27 +238,55 @@
       </div> -->
 {#      <form method="get" action="{% url 'search' %}">#}
                                                             Temporary comment
-        <div class="search2">
-            <form method="get" action="{% url 'search' %}">
-            <div class="search-bar2">
-              <div class="search-bar-item"></div>
-              <div class="durg"><input class="input-field" name="q" id="q" type="text" placeholder="Enter location here"></div>
-              <button class="search-click" id="search-click" type="submit"><img class="search-2-icon" alt="" src="{% static 'image/search-2@2x.png' %}" /></button>
-            </div>
-            <div class="button2">
-              <div class="preferences">
-                <button onclick="myFunction()" class="dropbtn">Preferences</button>
-                <div id="myDropdown" class="dropdown-content">
-                  <a href="#">Ratings(High to Low)</a>
-                  <a href="#">Ratings(Low to High)</a>
-                  <a href="#">Price(Low to High)</a>
-                  <a href="#">Price(High to Low)</a>
-                </div>
-              </div>
-            </div>
-            </form>
-        </div>
+{#        <div class="search2">#}
+{#            <form method="get" action="{% url 'search' %}">#}
+{#            <div class="search-bar2">#}
+{#              <div class="search-bar-item"></div>#}
+{#              <div class="durg"><input class="input-field" name="q" id="q" type="text" placeholder="Enter location here"></div>#}
+{#              <button class="search-click" id="search-click" type="submit"><img class="search-2-icon" alt="" src="{% static 'image/search-2@2x.png' %}" /></button>#}
+{#            </div>#}
+{#            <div class="button2">#}
+{#              <div class="preferences">#}
+{#                <button onclick="myFunction()" class="dropbtn">Preferences</button>#}
+{#                <div id="myDropdown" class="dropdown-content">#}
+{#                  <a href="#">Ratings(High to Low)</a>#}
+{#                  <a href="#">Ratings(Low to High)</a>#}
+{#                  <a href="#">Price(Low to High)</a>#}
+{#                  <a href="#">Price(High to Low)</a>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#            </form>#}
+{#        </div>#}
 
+        <div class="search-bar">
+            <!-- Dropdown starts -->
+            <div class="dropdown">
+                <div id="drop-text" class="dropdown-text">
+                    <span id="span">Preferences</span>
+                    <img class="dropdown-arrow" id="icon" alt="" src="{% static 'image/icons8-circle-96.png' %}" />
+                    </div>
+
+                <ul id="list" class="dropdown-list">
+                    <li class="dropdown-list-item">Ratings (High to Low)</li>
+                    <li class="dropdown-list-item">Ratings (Low to High)</li>
+                    <li class="dropdown-list-item">Price (High to low)</li>
+                    <li class="dropdown-list-item">Price (Low to High)</li>
+                </ul>
+            </div>
+
+
+
+            <div class="search-box">
+                <form method="get" action="{% url 'search' %}">
+                    <input type="text" name="q" id="q" placeholder="Enter your location">
+                    <button class="search-click" id="search-click">
+                        <img class="search-2-icon" alt="" src="{% static 'image/search-2@2x.png' %}" />
+                    </button>
+                </form>
+            </div>
+            <!-- Dropdown ends -->
+        </div>
                                                             {#Temporary comment#}
 {##}
 {#        <form method="get" action="{% url 'search' %}">#}
@@ -370,29 +398,65 @@
       var searchClick = document.getElementById("search-click");
       if (searchClick) {
         searchClick.addEventListener("click", function (e) {
-          window.location.href = "/";
+          window.location.href = "{% url 'search' %}";
         });
       }
 // yha tumhe link dalni hai - this is search icon
 
+       {#Dropdown#}
+    var dropdownBtn = document.getElementById("drop-text");
+    var list = document.getElementById("list");
+    var icon = document.getElementById("icon");
+    var span = document.getElementById("span");
+    var input = document.getElementById("q");
+    var listItems = document.querySelectorAll(".dropdown-list-item");
+        if(dropdownBtn) {
+            dropdownBtn.addEventListener("click", function () {
+                if (list.classList.contains("show")) {
+                    icon.style.rotate = "0deg";
+                } else {
+                    icon.style.rotate = "-180deg";
+                }
+                list.classList.toggle("show");
+            });
+
+            window.onclick = function (e) {
+                if (
+                    e.target.id !== "drop-text" &&
+                    e.target.id !== "span" &&
+                    e.target.id !== "icon"
+                ) {
+                    list.classList.remove("show");
+                    icon.style.rotate = "0deg"
+                }
+            };
+        }
+            if(listItems) {
+                for (item of listItems) {
+                    item.onclick = function (e) {
+                        span.innerText = e.target.innerText;
+                    };
+                }
+            }
+
 
 // dropdown
-      function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
-
-      window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-              openDropdown.classList.remove('show');
-            }
-          }
-        }
-      }
+      {#function myFunction() {#}
+      {#  document.getElementById("myDropdown").classList.toggle("show");#}
+      {#}#}
+      {##}
+      {#window.onclick = function(event) {#}
+      {#  if (!event.target.matches('.dropbtn')) {#}
+      {#    var dropdowns = document.getElementsByClassName("dropdown-content");#}
+      {#    var i;#}
+      {#    for (i = 0; i < dropdowns.length; i++) {#}
+      {#      var openDropdown = dropdowns[i];#}
+      {#      if (openDropdown.classList.contains('show')) {#}
+      {#        openDropdown.classList.remove('show');#}
+      {#      }#}
+      {#    }#}
+      {#  }#}
+      {#}#}
 
       </script>
   </body>

@@ -640,14 +640,14 @@ input[type=textarea]{
 ::placeholder{
   color: #192F32;
   font-size: 1.2rem;
-  font-weight: .5rem;
+  font-weight: 300;
   padding: 2px 0px;
 }
 
 input[type=text]{
   color: #192F32;
   font-size: 1.2rem;
-  font-weight: .5rem;
+  font-weight: 300;
   padding: 2px 20px;
 }
 

@@ -600,25 +600,26 @@ input[type=textarea]{
 
 ::placeholder{
   color: #192F32;
-  font-size: 1.2rem;
-  font-weight: .5rem;
-  padding: 3px 0px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding-left: 0rem;
+  padding-top: 2rem;
 }
 
 input[type=text]{
   color: #192F32;
-  font-size: 1.2rem;
-  font-weight: .5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
   padding: 3px 20px;
 }
 
 .search-2-icon {
-  position: absolute;
-  top: 8px;
-  left: 790px;
-  width: 39px;
-  height: 38px;
-  object-fit: cover;
+    position: absolute;
+    top: 22%;
+    left: 93%;
+    width: 39px;
+    height: 38px;
+    object-fit: cover;
 }
 
 .button-inner,
@@ -827,10 +828,11 @@ input[type=text]{
 /* Search Click Button */
 .search-click{
   cursor: pointer;
+  border: none;
 }
 
-.search-click:hower, .search-click:focus{
-  background-color: #f4bf4b;
+.search-click:hover, .search-click:focus{
+
 }
 
 
@@ -961,4 +963,101 @@ input[type=text]{
 
 .stay6 {
   color: var(--color-orange);
+}
+
+.search-bar{
+    display: flex;
+    position: absolute;
+    left: 22%;
+    top: 6.5%;
+    width: 844px;
+    font-size: 23.5px;
+    background-color: var(--color-white);
+    border-radius: 45px;
+    height: 3.81rem;
+}
+
+  .dropdown {
+    position: relative;
+    color: #192F32;
+    padding: 1rem 1rem;
+    font-size: 24px;
+    font-weight: 150;
+    border-radius: 45px;
+    border: none;
+    background-color: var(--color-goldenrod);
+    cursor: pointer;
+    width: 300px;
+    height: 60px;
+}
+
+
+.dropdown-text{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: normal;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 0rem 0rem;
+    top: 10%;
+}
+
+#span{
+     width: 200px;
+}
+
+.dropdown-list{
+    position: absolute;
+    top: 4.35rem;
+    left: 0;
+    width: 100%;
+    border-radius: 20px;
+    background-color: var(--color-goldenrod);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+#list.show {
+  max-height: 500px;
+}
+
+.dropdown-list-item{
+    padding: .6rem 1.2rem .6rem 0rem;
+    list-style: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    curson: pointer;
+    transition: margin-left 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-list-item:hover{
+  margin-left: 0.5rem;
+  color: var(--color-white);
+}
+
+.dropdown-arrow{
+    display: flex;
+    padding: 0rem;
+    height: 1.5rem;
+    top: 1%;
+}
+
+.search-box{
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  width: 100%;
+}
+
+.search-box input{
+    position: relative;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border: 0;
+    outline: 0;
+    padding-left: 2rem;
+    top: 1rem;
 }
