@@ -7,3 +7,5 @@ db.sqlite3
 .vscode
 .idea/MiniProject.iml
 data/*
+.fuse_hidden00006b2700000005
+Not required

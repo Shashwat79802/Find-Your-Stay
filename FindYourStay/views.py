@@ -7,15 +7,28 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from django.core.paginator import Paginator
 from os.path import exists
+import os
+import time
+from pathlib import Path
+import schedule
+import pytz
+from datetime import datetime, timedelta
+import os
+import logging
 
 
-#-----------------------------------------------------------------------------------------------------------------------
+# logger = logging.getLogger(__name__)
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+# dir_path = '/media/shashwat/2E9AD3589AD31AE3/MiniProject/data'
+dir_path = os.path.join(BASE_DIR, 'data')
 
 
 def output_file_name_generator(city, state):
     if ' ' in state:
         state = state.split(' ')
-        state = ''.join(state)
+        state = '-'.join(state)
 
     return 'data/' + city + '_' + state + '.csv'
 
@@ -75,9 +88,22 @@ def forward_geocoding(city, state):
 # -----------------------------------------------------------------------------------------------------------------------
 
 
-def sort_csv(input_file, output_file, sort_col_index, ascending=True):
+def sort_csv(input_file, output_file, sorting_type):
     # read the csv file into a pandas DataFrame
     df = pd.read_csv(input_file)
+
+    if sorting_type == 1:
+        sort_col_index = 4
+        ascending = False
+    elif sorting_type == 2:
+        sort_col_index = 4
+        ascending = True
+    elif sorting_type == 3:
+        sort_col_index = 1
+        ascending = False
+    else:
+        sort_col_index = 1
+        ascending = True
 
     # sort the DataFrame by the specified column index
     df.sort_values(by=df.columns[sort_col_index], ascending=ascending, inplace=True, na_position='last')
@@ -323,7 +349,7 @@ def yatra_scrapper(city):
 # -----------------------------------------------------------------------------------------------------------------------
 
 # prime scrapper function that call all the other scrapper functions, cleans the data and combines it.
-def scrapper(city, state, sort=None, ascending=None):
+def scrapper(city, state):
     oyo_scrapper(city, state)
     yatra_scrapper(city)
     data_cleaner('data/oyo.csv')
@@ -332,9 +358,6 @@ def scrapper(city, state, sort=None, ascending=None):
     output_file = output_file_name_generator(city, state)
 
     combine_csv('data/oyo.csv', 'data/yatra.csv', output_file)
-
-    if sort is not None:
-        sort_csv(output_file, output_file, sort, ascending)
 
     print('Successful...')
 
@@ -534,8 +557,12 @@ def scrapper(city, state, sort=None, ascending=None):
 # -----------------------------------------------------------------------------------------------------------------------
 
 
-def get_data(filename):
+def get_data(filename, sort):
     data_list = []
+
+    if sort is not None:
+        sort_csv(filename, filename, sort)
+
     with open(filename, 'r') as csv_file:
         csv_reader = csv.reader(csv_file)
         next(csv_reader)  # skip header row
@@ -554,27 +581,37 @@ def about_us(request):
 
 # function that fetches result according to the provided user input
 def search(request):
-
+    url = request.get_full_path()  # taking the complete url of the current request to implement pagination query into it
     query = (request.GET['q']).split(', ')  # getting the user input from the request query
     print(query)
 
     required_file = output_file_name_generator(query[0], query[1])
     required_file_exists = exists(required_file)  # fetching the main data from the file
 
+    sort = None
+    if "&sort_by" in url:
+        sort = int(request.GET['sort_by'])
+        print(type(sort))
+
     if required_file_exists:
-        result = get_data(required_file)
+        result = get_data(required_file, sort)
 
     else:
         scrapper(query[0], query[1])
-        result = get_data(required_file)
+        result = get_data(required_file, sort)
 
     pages = Paginator(result, 7)  # implementing pagination, and making a Paginator object i.e. pages
     page_number = request.GET.get('page')  # getting which page number is requested
     final_data = pages.get_page(page_number)  # fetching the requested page using its page number
-    url = request.get_full_path()  # taking the complete url of the current request to implement pagination query into it
 
     if "&page=" in url:  # removing the existing &page=n from the url to obtain the base url with the user input
         url = url[:url.index("&page=")]
+
+    if "&sort_by=" in url:  # removing the existing &page=n from the url to obtain the base url with the user input
+        url = url[:url.index("&sort_by=")]
+
+    # if "&sort_by=1" or "&sort_by=2" or "&sort_by=3" or "&sort_by=4":
+    #     url = url.replace()
 
     return render(request, 'FindYourStay/search.html', {
         # data for the html page
@@ -584,3 +621,51 @@ def search(request):
         'url': url
     }
                   )
+
+
+def delete_old_csv_files():
+    # Get the current time
+    current_time = time.time()
+
+    # Get the list of all CSV files in the directory
+    csv_files = [f for f in os.listdir(dir_path) if f.endswith('.csv')]
+
+    # Loop through the CSV files and check their access time
+    for file in csv_files:
+        if file in ["oyo.csv", "yatra.csv"]:
+            # Skip files named "oyo.csv" and "yatra.csv"
+            continue
+        file_path = os.path.join(dir_path, file)
+        access_time = os.path.getatime(file_path)
+        # Check if the file hasn't been accessed in the last three days
+        if (current_time - access_time) // (24 * 3600) >= 3:
+            # Delete the file
+            os.remove(file_path)
+        else:
+            # Keep the file
+            pass
+
+    # Print a list of remaining files
+    remaining_files = [f for f in os.listdir(dir_path) if f.endswith('.csv') and f not in ["oyo.csv", "yatra.csv"]]
+    print("Remaining files:")
+    for file in remaining_files:
+        print(file)
+
+
+# Schedule the script to run at 12:05 AM every day
+# schedule.every().day.at("00:05").do(delete_old_csv_files)
+#
+# # Keep the script running
+# while True:
+#     schedule.run_pending()
+#     time.sleep(1)
+
+
+# scheduler = BlockingScheduler()
+# scheduler.add_job(delete_old_csv_files, "cron", hour=12, minute=23)
+# scheduler.start()
+
+if __name__ == '__main__':
+    while True:
+        delete_old_csv_files()
+        time.sleep(86400)

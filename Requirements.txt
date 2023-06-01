@@ -8,4 +8,4 @@ selenium
 pandas
 lxml
 django-bootstrap5
-redis[hiredis]
+django-crontab == 0.7.1

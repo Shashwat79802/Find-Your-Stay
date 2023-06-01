@@ -184,95 +184,29 @@
             {% endif %}
           </ul>
       </nav>
-
-{#        <div class="search-result-2" id="searchResult2">#}
-{#          <img#}
-{#            class="download-1-icon"#}
-{#            alt=""#}
-{#            src="{% static 'image/download-1@2x.png' %}"#}
-{#          />#}
-{#          <div class="hotel-name">Hotel Amit International, Bhilai</div>#}
-{#          <img class="rating-icon" alt="" src="{% static 'image/rating.svg' %}" />#}
-{#          <div class="reviews">Reviews</div>#}
-{#          <div class="adress">#}
-{#            6946+X3Q, B-C/3, Shivnath Vistar Vyavsayik Yojana, G.E.Road,#}
-{#            National Highway 6, Supela, next to Maurya Talkies, Shastri Nagar,#}
-{#            Bhilai, Chhattisgarh 490023#}
-{#          </div>#}
-{#        </div>#}
-{#        <div class="search-result-1" id="searchResult1">#}
-{#          <img#}
-{#            class="download-1-icon"#}
-{#            alt=""#}
-{#            src="{% static 'image/download-1@2x.png' %}"#}
-{#          />#}
-{#          <div class="hotel-name">Hotel Amit International, Bhilai</div>#}
-{#          <img class="rating-icon" alt="" src="{% static 'image/rating.svg' %}" />#}
-{#          <div class="reviews">Reviews</div>#}
-{#          <div class="adress">#}
-{#            6946+X3Q, B-C/3, Shivnath Vistar Vyavsayik Yojana, G.E.Road,#}
-{#            National Highway 6, Supela, next to Maurya Talkies, Shastri Nagar,#}
-{#            Bhilai, Chhattisgarh 490023#}
-{#          </div>#}
-{#        </div>#}
       </div>
-      <!-- <div class="top-results">
-        <div class="top-results-child"></div>
-        <img class="most-relevant-item" alt="" src="../public/line-12.svg" />
-        <div class="top-results-in">Top Results in “Durg”</div>
-        <div class="search-result" id="searchResult">
-          <img
-            class="download-1-icon"
-            alt=""
-            src="../public/download-1@2x.png"
-          />
-          <div class="hotel-name">Hotel Amit International, Bhilai</div>
-          <img class="rating-icon" alt="" src="../public/rating.svg" />
-          <div class="reviews">Reviews</div>
-          <div class="adress">
-            6946+X3Q, B-C/3, Shivnath Vistar Vyavsayik Yojana, G.E.Road,
-            National Highway 6, Supela, next to Maurya Talkies, Shastri Nagar,
-            Bhilai, Chhattisgarh 490023
-          </div>
-        </div>
-      </div> -->
-{#      <form method="get" action="{% url 'search' %}">#}
-                                                            Temporary comment
-{#        <div class="search2">#}
-{#            <form method="get" action="{% url 'search' %}">#}
-{#            <div class="search-bar2">#}
-{#              <div class="search-bar-item"></div>#}
-{#              <div class="durg"><input class="input-field" name="q" id="q" type="text" placeholder="Enter location here"></div>#}
-{#              <button class="search-click" id="search-click" type="submit"><img class="search-2-icon" alt="" src="{% static 'image/search-2@2x.png' %}" /></button>#}
-{#            </div>#}
-{#            <div class="button2">#}
-{#              <div class="preferences">#}
-{#                <button onclick="myFunction()" class="dropbtn">Preferences</button>#}
-{#                <div id="myDropdown" class="dropdown-content">#}
-{#                  <a href="#">Ratings(High to Low)</a>#}
-{#                  <a href="#">Ratings(Low to High)</a>#}
-{#                  <a href="#">Price(Low to High)</a>#}
-{#                  <a href="#">Price(High to Low)</a>#}
-{#                </div>#}
-{#              </div>#}
-{#            </div>#}
-{#            </form>#}
-{#        </div>#}
 
         <div class="search-bar">
             <!-- Dropdown starts -->
             <div class="dropdown">
                 <div id="drop-text" class="dropdown-text">
-                    <span id="span">Preferences</span>
+                    <span id="span">Sort Results</span>
                     <img class="dropdown-arrow" id="icon" alt="" src="{% static 'image/icons8-circle-96.png' %}" />
                     </div>
 
-                <ul id="list" class="dropdown-list">
-                    <li class="dropdown-list-item">Ratings (High to Low)</li>
-                    <li class="dropdown-list-item">Ratings (Low to High)</li>
-                    <li class="dropdown-list-item">Price (High to low)</li>
-                    <li class="dropdown-list-item">Price (Low to High)</li>
-                </ul>
+{#                <ul id="list" class="dropdown-list">#}
+{#                    <li class="dropdown-list-item">Ratings (High to Low)</li>#}
+{#                    <li class="dropdown-list-item">Ratings (Low to High)</li>#}
+{#                    <li class="dropdown-list-item">Price (High to low)</li>#}
+{#                    <li class="dropdown-list-item">Price (Low to High)</li>#}
+{#                </ul>#}
+
+                    <ul id="list" class="dropdown-list">
+                        <li class="dropdown-list-item"><a href="{{ url }}&sort_by=1">Ratings (High to Low)</a></li>
+                        <li class="dropdown-list-item"><a href="{{ url }}&sort_by=2">Ratings (Low to High)</a></li>
+                        <li class="dropdown-list-item"><a href="{{ url }}&sort_by=3">Price (High to low)</a></li>
+                        <li class="dropdown-list-item"><a href="{{ url }}&sort_by=4">Price (Low to High)</a></li>
+                    </ul>
             </div>
 
 
@@ -443,7 +377,7 @@
 // dropdown
       {#function myFunction() {#}
       {#  document.getElementById("myDropdown").classList.toggle("show");#}
-      {#}#}
+      {# }#}
       {##}
       {#window.onclick = function(event) {#}
       {#  if (!event.target.matches('.dropbtn')) {#}
@@ -456,7 +390,7 @@
       {#      }#}
       {#    }#}
       {#  }#}
-      {#}#}
+      {# }#}
 
       </script>
   </body>
