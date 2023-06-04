@@ -121,7 +121,7 @@
           </div>
         </div> -->
 
-{#      <div class="row>">#}
+<!-- {#      <div class="row>">#}
 {#        {% for inner_list in result %}#}
 {#                <div class="search-result-3" id="searchResult3">#}
 {#                  <img#}
@@ -138,12 +138,12 @@
 {#                  </div>#}
 {#                </div>#}
 {#        {% endfor %}#}
-{#      </div>#}
+{#      </div>#} -->
 
       <div class="row>">
         {% for inner_list in result %}
                 <div class="search-result-3" id="searchResult3">
-
+                    
                   <img
                     class="download-1-icon"
                     alt=""
@@ -153,7 +153,7 @@
                     <a href="{{ inner_list.6 }}"><div class="hotel-name">{{ inner_list.0 }}</div></a>
                     <div class="rating-icon"><span class="Rs">Rs.</span>{{ inner_list.1 }}</div>
                   <div class="reviews">{{ inner_list.5 }}</div>
-{#                    inner_list.5 ki jgh ratings ayenga#}
+<!-- {#                    inner_list.5 ki jgh ratings ayenga #} -->
                   <div class="adress">
                     {{ inner_list.3 }}
                   </div>
@@ -194,12 +194,12 @@
                     <img class="dropdown-arrow" id="icon" alt="" src="{% static 'image/icons8-circle-96.png' %}" />
                     </div>
 
-{#                <ul id="list" class="dropdown-list">#}
+<!-- {#                <ul id="list" class="dropdown-list">#}
 {#                    <li class="dropdown-list-item">Ratings (High to Low)</li>#}
 {#                    <li class="dropdown-list-item">Ratings (Low to High)</li>#}
 {#                    <li class="dropdown-list-item">Price (High to low)</li>#}
 {#                    <li class="dropdown-list-item">Price (Low to High)</li>#}
-{#                </ul>#}
+{#                </ul>#} -->
 
                     <ul id="list" class="dropdown-list">
                         <li class="dropdown-list-item"><a href="{{ url }}&sort_by=1">Ratings (High to Low)</a></li>
@@ -222,7 +222,7 @@
             <!-- Dropdown ends -->
         </div>
                                                             {#Temporary comment#}
-{##}
+<!-- {##}
 {#        <form method="get" action="{% url 'search' %}">#}
 {#    <div class="search2">#}
 {#        <div class="search-bar2">#}
@@ -243,7 +243,7 @@
 {#            </div>#}
 {#        </div>#}
 {#    </div>#}
-{#</form>#}
+{#</form>#} -->
 
       <!-- <div class="nav1">
         <div class="nav-item"></div>
@@ -337,7 +337,7 @@
       }
 // yha tumhe link dalni hai - this is search icon
 
-       {#Dropdown#}
+      //  {#Dropdown#}
     var dropdownBtn = document.getElementById("drop-text");
     var list = document.getElementById("list");
     var icon = document.getElementById("icon");
@@ -374,23 +374,23 @@
             }
 
 
-// dropdown
-      {#function myFunction() {#}
-      {#  document.getElementById("myDropdown").classList.toggle("show");#}
-      {# }#}
-      {##}
-      {#window.onclick = function(event) {#}
-      {#  if (!event.target.matches('.dropbtn')) {#}
-      {#    var dropdowns = document.getElementsByClassName("dropdown-content");#}
-      {#    var i;#}
-      {#    for (i = 0; i < dropdowns.length; i++) {#}
-      {#      var openDropdown = dropdowns[i];#}
-      {#      if (openDropdown.classList.contains('show')) {#}
-      {#        openDropdown.classList.remove('show');#}
-      {#      }#}
-      {#    }#}
-      {#  }#}
-      {# }#}
+// // dropdown
+//       {#function myFunction() {#}
+//       {#  document.getElementById("myDropdown").classList.toggle("show");#}
+//       {# }#}
+//       {##}
+//       {#window.onclick = function(event) {#}
+//       {#  if (!event.target.matches('.dropbtn')) {#}
+//       {#    var dropdowns = document.getElementsByClassName("dropdown-content");#}
+//       {#    var i;#}
+//       {#    for (i = 0; i < dropdowns.length; i++) {#}
+//       {#      var openDropdown = dropdowns[i];#}
+//       {#      if (openDropdown.classList.contains('show')) {#}
+//       {#        openDropdown.classList.remove('show');#}
+//       {#      }#}
+//       {#    }#}
+//       {#  }#}
+//       {# }#}
 
       </script>
   </body>

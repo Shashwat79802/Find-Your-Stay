@@ -141,43 +141,43 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# APP_LOG_FILENAME = os.path.join(BASE_DIR, 'log/app.log')
-# ERROR_LOG_FILENAME = os.path.join(BASE_DIR, 'log/error.log')
+APP_LOG_FILENAME = os.path.join(BASE_DIR, 'log/app.log')
+ERROR_LOG_FILENAME = os.path.join(BASE_DIR, 'log/error.log')
 #
-# LOGGING = {
-#     "version": 1,
-#     "disable_existing_loggers": False,
-#     'formatters': {
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    'formatters': {
 #         'console': {
 #             'format': '%(name)-12s %(levelname)-8s %(message)s'
 #         },
-#         'file': {
-#             'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
-#         }
-#     },
-#     "root": {
-#         "handlers": ["console"],
-#         "level": "WARNING",
-#     },
-#     'handlers': {
+        'file': {
+            'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
+        }
+    },
+    "root": {
+        "handlers": ["file"],
+        "level": "WARNING",
+    },
+    'handlers': {
 #         'console': {
 #             'class': 'logging.StreamHandler',
 #             'formatter': 'console'
 #         },
-#         'file': {
-#             'level': 'DEBUG',
-#             'class': 'logging.FileHandler',
-#             'formatter': 'file',
-#             'filename': APP_LOG_FILENAME
-#         }
-#     },
-#     "loggers": {
-#         'django': {
-#             "level": 'DEBUG',
-#             "handlers": ["console", 'file'],
-#         },
-#     },
-# }
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'formatter': 'file',
+            'filename': APP_LOG_FILENAME
+        }
+    },
+    "loggers": {
+        'django': {
+            "level": 'INFO',
+            "handlers": ['file'],
+        },
+    },
+}
 #
 # CRONJOBS = [
 #     ('*/1 * * * *', 'FindYourStay.cron.my_scheduled_job')
