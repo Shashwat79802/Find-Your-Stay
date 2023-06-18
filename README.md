@@ -1,6 +1,6 @@
 # Find Your Stay
 
-<img src="https://github.com/poorvadiwan/Find-Your-Stay-1/blob/master/MiniProject/logo.png" align="right"
+<img src="https://github.com/Shashwat79802/Find-Your-Stay/blob/master/FindYourStay/static/image/logo.png" align="right"
 alt="logo" width = "35%">
 
 <div align="justify">
@@ -20,13 +20,13 @@ It cuts the chase of looking for hotels on different websites by bringing it all
 
 Here are a few snippets of the website - 
 <br><br>
-<img src="https://github.com/poorvadiwan/Find-Your-Stay-1/blob/master/MiniProject/home%20page.png" 
+<img src="https://github.com/Shashwat79802/Find-Your-Stay/blob/master/FindYourStay/static/image/home%20page.png" 
 alt="homepage" width = "80%" align="center">
 <br><br>
-<img src="https://github.com/poorvadiwan/Find-Your-Stay-1/blob/master/MiniProject/about.png" 
+<img src="https://github.com/Shashwat79802/Find-Your-Stay/blob/master/FindYourStay/static/image/about.png" 
 alt="homepage" width = "80%" align="center">
 <br><br>
-<img src="https://github.com/poorvadiwan/Find-Your-Stay-1/blob/master/MiniProject/search.png" 
+<img src="https://github.com/Shashwat79802/Find-Your-Stay/blob/master/FindYourStay/static/image/search.png" 
 alt="homepage" width = "80%" align="center">
 <br><br>
 <b>The project is open source and all suggestions and amendments are welcome from the community. Here is a guide to help you install.</b>
