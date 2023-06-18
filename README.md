@@ -6,14 +6,14 @@ alt="logo" width = "35%">
 <div align="justify">
 FindYourStay is a web application that helps users search for hotel stays at their desired travel location in one go. 
 It cuts the chase of looking for hotels on different websites by bringing it all in one platform. We like to call it - 
-<b>“the stay search engine”</b>. 
+<b>“The Stay Search Engine”</b>. 
 </div>
 
 ### How does it work?
 
   1. The site takes the location query from the user in the format - ‘City, State’.</li>
   2. Relevant data from sites like [oyorooms.com](https://www.oyorooms.com) and [yatra.com](https://www.yatra.com) is scrapped in real-time and stored in a csv files.
-      Data fields include - Hotel Name, Price, Images, Address, Ratings, Hotel URL.
+      Data fields include - Hotel Name, Price, Images, Address, Ratings, and Hotel URL.
   3. This data is reflected on the site ready for the user to interact.
   4. Filter features like sorting on the basis of popularity and relevance are included for better results. 
 
@@ -38,7 +38,7 @@ alt="homepage" width = "80%" align="center">
   
 2. To clone the repository to your local system, navigate to the folder where you want to save the project and run the command-
     <br>
-    `git clone https://github.com/your-github/project-name`
+    `git clone https://github.com/your-github/Find-Your-Stay.git`
   
 3. Now navigate to the root folder of the project where the “manage.py” file is located.
   
